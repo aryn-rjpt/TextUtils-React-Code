@@ -41,11 +41,11 @@ export default function TextForm({ heading = "Enter Something", displayMode }) {
                     <h2 className='my-3'>{heading}</h2>
                     <textarea className={`${displayMode === "dark" ? "textareaDarkStyle" : ""} form-control `} id="myBox" value={text} onChange={handleChange} rows="8" ></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>Uppercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLowerClick}>Lowercase</button>
-                <button className="btn btn-primary mx-2" onClick={ removeExtraSpaces }>Remove Extra Spaces</button>
-                <button className="btn btn-primary mx-2" onClick={() => { setText("") }}>Clear</button>
-                <button className="btn btn-primary mx-2" onClick={ handleCopy } disabled={copyBtnState}> {copyBtnText} </button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Uppercase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowerClick}>Lowercase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ removeExtraSpaces }>Remove Extra Spaces</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={() => { setText("") }}>Clear</button>
+                <button className="btn btn-primary mx-2 my-1" onClick={ handleCopy } disabled={copyBtnState || text.length===0}> {copyBtnText} </button>
             </div>
             <div className='container my-3 text-center'>
                 <h2 className='my-4'>Your Text Summary</h2>
