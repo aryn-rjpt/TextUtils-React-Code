@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Code for the project TextUtils deployed using repository named "TextUtils-React"
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
